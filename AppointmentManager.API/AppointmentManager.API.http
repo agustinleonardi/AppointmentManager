@@ -1,0 +1,6 @@
+@AppointmentManager.API_HostAddress = http://localhost:5078
+
+GET {{AppointmentManager.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
