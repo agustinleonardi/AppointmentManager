@@ -1,4 +1,6 @@
+using System.ComponentModel.DataAnnotations;
 using AppointmentManager.Domain.Enums;
+using AppointmentManager.Domain.Exceptions;
 using AppointmentManager.Domain.ValueObjects;
 
 namespace AppointmentManager.Domain.Entities;
@@ -24,5 +26,13 @@ public class User
         Role = role;
         IsActive = true;
         CreatedAt = DateTime.UtcNow;
+    }
+    public void UpdateName(Name name)
+    {
+        if (name == null)
+        {
+            throw new InvalidNameException("El nombre esta vacio");
+        }
+        Name = name;
     }
 }
